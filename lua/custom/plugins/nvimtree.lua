@@ -11,12 +11,12 @@ vim.g.nvim_tree_icons = {
   git = {
     -- unstaged = '',
     unstaged = '',
-    staged = '✓',
+    staged = '﯈',
     unmerged = '',
     renamed = '➜',
-    deleted = '',
+    deleted = '',
     untracked = '',
-    ignored = '◌',
+    ignored = '﯏',
   },
   folder = {
     default = '',
@@ -27,10 +27,12 @@ vim.g.nvim_tree_icons = {
   },
 }
 
+
 vim.g.nvim_tree_indent_markers = 1 -- 文件夹打开显示缩进
 
 nvimtree.setup({
-
+  disable_window_picker = 0,
+  root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" },
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
@@ -38,6 +40,15 @@ nvimtree.setup({
     'startify',
     'dashboard',
     'alpha',
+  },
+  diagnostics = {
+    enable = false,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = " ",
+    }
   },
   auto_close = true,
   open_on_tab = false,
@@ -74,6 +85,23 @@ nvimtree.setup({
     number = false,
     relativenumber = false,
   },
-  disable_window_picker = 0,
-  root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" },
+  actions = {
+    change_dir = {
+      enable = true,
+      global = true,
+    },
+    open_file = {
+      quit_on_open = false,
+      resize_window = true,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", },
+          buftype  = { "nofile", "terminal", "help", },
+        }
+      }
+    }
+  },
+
 }) 

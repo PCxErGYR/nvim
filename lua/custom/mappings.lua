@@ -1,5 +1,3 @@
-require'nvim-treesitter.configs'.setup {
-    indent = {
-      enable = false
-    }
-}
+local map = require("core.utils").map
+
+
