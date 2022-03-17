@@ -10,7 +10,7 @@ local M = {}
 M.ui = {
   -- theme="gruvchad",
   -- theme="onedark",
-  theme = "aquarium",
+  theme = "catppuccin",
   -- transparency = true,
 }
 

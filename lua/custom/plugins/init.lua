@@ -1,4 +1,11 @@
 return {
+  {
+    'NvChad/nvim-base16.lua',
+    after = 'packer.nvim',
+    config = function()
+      require('colors').init()
+    end,
+  },
   {'gpanders/editorconfig.nvim'},
   {'yamatsum/nvim-cursorline'},
   {
@@ -20,7 +27,7 @@ return {
       "jose-elias-alvarez/null-ls.nvim",
       after = "nvim-lspconfig",
       config = function()
-         require("custom.plugins.null-ls").setup()
+         require("custom.plugins.misc").null_ls()
       end,
    },
    {
@@ -29,16 +36,6 @@ return {
     config = "require('custom.plugins.misc').colorizer()",
   },
   {
-  "mattn/emmet-vim",
-  setup = function () -- load stuff before the plugin is loaded
-    vim.g.user_emmet_leader_key = '<c-m>'
-
-    vim.g.user_emmet_settings = {
-      indent_blockelement = 1,
-    }
-  end
-},
-{
     'neovim/nvim-lspconfig',
     config = "require('custom.plugins.lsp')",
     opt = true,
@@ -51,5 +48,10 @@ return {
   },
   {
     'williamboman/nvim-lsp-installer',
+  },
+  {
+    -- Theme
+    "catppuccin/nvim",
+    as = "catppuccin"
   }
 }

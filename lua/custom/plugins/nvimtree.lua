@@ -9,7 +9,8 @@ vim.g.nvim_tree_icons = {
   default = '',
   symlink = '',
   git = {
-    unstaged = '',
+    -- unstaged = '',
+    unstaged = '',
     staged = '✓',
     unmerged = '',
     renamed = '➜',
@@ -66,7 +67,6 @@ nvimtree.setup({
       custom_only = false,
       list = {
         { key = { 'l', '<CR>', 'o' }, action = 'edit' },
-        -- { key = 'h', action = 'close_node' },
         { key = 'v', action = 'vsplit' },
         { key = 'h', action = 'split' },
       },

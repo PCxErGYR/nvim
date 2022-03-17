@@ -22,6 +22,7 @@ local header = {
 }
 local buttons = {
   button('SPC f n', '  New file', ':ene <BAR> startinsert <CR>'),
+  button("SPC f t", "  To Go  ", ":Telescope buffers <CR>"),
   button("SPC f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
   button("SPC f f", "  Find File  ", ":Telescope find_files<CR>"),
   button("SPC f w", "  Find Word  ", ":Telescope live_grep<CR>"),
