@@ -3,7 +3,7 @@
 require('custom.plugins.nvimtree')
 require("custom.plugins.cmp")
 require("custom.plugins.gitsigns")
-require("custom.plugins.blankline")
+-- require("custom.plugins.blankline")
 
 
 local M = {}
