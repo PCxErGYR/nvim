@@ -7,6 +7,8 @@ local M = {}
 M.toggleterm = function()
 end
 
+M.fterm = function ()
+end
 
 M.colorizer = function()
   local present, colorizer = pcall(require, 'colorizer')

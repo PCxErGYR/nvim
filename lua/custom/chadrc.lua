@@ -6,11 +6,12 @@ local userPlugins = require("custom.plugins")
 
 local M = {}
 
+vim.g.material_style = "deep ocean"
 
 M.ui = {
   -- theme="gruvchad",
   -- theme="onedark",
-  theme = "catppuccin",
+  theme = "one-light",
   -- transparency = true,
 }
 

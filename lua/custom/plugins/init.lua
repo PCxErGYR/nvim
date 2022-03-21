@@ -1,3 +1,6 @@
+local plugin_settings = require('core.utils').load_config().plugins
+-- local present, packer = pcall(require, 'plugins.packerInit')
+
 return {
   {
     'NvChad/nvim-base16.lua',
@@ -13,6 +16,12 @@ return {
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function ()
         require'alpha'.setup(require'custom.plugins.alpha'.config)
+    end
+  },
+  {
+    "numToStr/FTerm.nvim",
+    setup = function()
+      require('custom.plugins.misc').fterm()
     end
   },
   {
@@ -49,9 +58,18 @@ return {
   {
     'williamboman/nvim-lsp-installer',
   },
+  {'is0n/jaq-nvim'},
+  { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim', branch = "new_features" },
   {
     -- Theme
     "catppuccin/nvim",
     as = "catppuccin"
+  },
+  {
+    'marko-cerovac/material.nvim'
+  },
+  {
+    'shaeinst/roshnivim-cs'
   }
+
 }
